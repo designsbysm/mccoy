@@ -83,16 +83,32 @@ func TestItems(t *testing.T) {
 		t.Errorf("should have 3, got %d", len(items))
 	}
 
-	if reflect.TypeOf(items[0]).String() != "string" {
-		t.Errorf("first item should be string, got %s", reflect.TypeOf(items[0]).String())
+	var stringFound bool
+	var intFound bool
+	var floatFound bool
+
+	for _, value := range items {
+		if value == "item1" && reflect.TypeOf(value).String() == "string" {
+			stringFound = true
+		}
+		if value == 2 && reflect.TypeOf(value).String() == "int" {
+			intFound = true
+		}
+		if value == 3.14 && reflect.TypeOf(value).String() == "float64" {
+			floatFound = true
+		}
 	}
 
-	if reflect.TypeOf(items[1]).String() != "int" {
-		t.Errorf("first item should be int, got %s", reflect.TypeOf(items[1]).String())
+	if !stringFound {
+		t.Errorf("items should contain string, intem1")
 	}
 
-	if reflect.TypeOf(items[2]).String() != "float64" {
-		t.Errorf("first item should be float, got %s", reflect.TypeOf(items[2]).String())
+	if !intFound {
+		t.Errorf("items should contain int, 2")
+	}
+
+	if !floatFound {
+		t.Errorf("items should contain float64, 3.14")
 	}
 }
 

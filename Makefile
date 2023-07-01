@@ -6,7 +6,7 @@ benchmark:
 	go test -bench=. -benchmem
 
 coverage:
-	go test -coverprofile=coverage.out
+	go test ./... -coverprofile=coverage.out
 	go tool cover -html="coverage.out"
 
 docs:
@@ -16,4 +16,4 @@ lint:
 	golangci-lint run .
 
 test:
-	go test -cover -race 
+	go test ./... -cover -race

@@ -8,10 +8,3 @@ func New(i mccoy.Item) *T {
 		nil,
 	}
 }
-
-// func New() *T {
-// 	return &T{
-// 		nil,
-// 		nil,
-// 	}
-// }

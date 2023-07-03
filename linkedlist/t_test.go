@@ -17,6 +17,8 @@ func createList() *T {
 }
 
 func printList(list *T) {
+	fmt.Print(" ")
+
 	for {
 		if list == nil {
 			break

@@ -1,9 +1,9 @@
 package linkedlist
 
-func (n *T) Reverse() *T {
-	list := New(n.head)
+func (l *T) Reverse() *T {
+	list := New(l.head)
 
-	for node := n.tail; node != nil; node = node.tail {
+	for node := l.tail; node != nil; node = node.tail {
 		list = list.Prepend(node.head)
 	}
 

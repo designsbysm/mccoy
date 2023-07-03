@@ -1,8 +1,7 @@
 package linkedlist
 
-func (n *T) Delete(index int) {
-	// TODO: change to At
-	found := n.Index(index - 1)
+func (l *T) Delete(index int) {
+	found := l.Index(index - 1)
 	next := found.tail
 
 	if next != nil {

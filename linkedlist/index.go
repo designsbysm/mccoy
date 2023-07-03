@@ -1,8 +1,8 @@
 package linkedlist
 
-func (n *T) Index(index int) *T {
+func (l *T) Index(index int) *T {
 	// TODO: check bounds, return error
-	node := n
+	node := l
 
 	for i := 0; i < index; i++ {
 		tail := node.tail

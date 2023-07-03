@@ -2,10 +2,10 @@ package linkedlist
 
 import "github.com/designsbysm/mccoy"
 
-func (n *T) Filter(fn func(mccoy.Item) bool) *T {
+func (l *T) Filter(fn func(mccoy.Item) bool) *T {
 	list := Empty()
 
-	for node := n; node != nil; node = node.tail {
+	for node := l; node != nil; node = node.tail {
 		if node.head == nil {
 			break
 		} else if !fn(node.head) {

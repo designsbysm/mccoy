@@ -2,10 +2,10 @@ package linkedlist
 
 import "github.com/designsbysm/mccoy"
 
-func (n *T) Map(fn func(mccoy.Item) mccoy.Item) *T {
+func (l *T) Map(fn func(mccoy.Item) mccoy.Item) *T {
 	list := Empty()
 
-	for node := n; node != nil; node = node.tail {
+	for node := l; node != nil; node = node.tail {
 		if node.head == nil {
 			break
 		}

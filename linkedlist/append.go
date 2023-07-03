@@ -2,9 +2,9 @@ package linkedlist
 
 import "github.com/designsbysm/mccoy"
 
-func (n *T) Append(i mccoy.Item) {
+func (l *T) Append(i mccoy.Item) {
 	node := New(i)
-	last := n.Last()
+	last := l.Last()
 
 	if last != nil {
 		last.tail = node

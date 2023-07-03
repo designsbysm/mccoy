@@ -12,7 +12,7 @@ func TestFilter(t *testing.T) {
 		return i.(int) <= 5
 	})
 
-	if size := filtered.Size(); size != 5 {
+	if size := filtered.Length(); size != 5 {
 		t.Errorf("should have 5, got %d", size)
 	}
 }
@@ -23,7 +23,7 @@ func TestFilterEmpty(t *testing.T) {
 		return i.(int) <= 5
 	})
 
-	if size := filtered.Size(); size != 1 {
+	if size := filtered.Length(); size != 1 {
 		t.Errorf("should have 1, got %d", size)
 	}
 }

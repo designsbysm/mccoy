@@ -7,7 +7,7 @@ import (
 func TestEmpty(t *testing.T) {
 	list := Empty()
 
-	if size := list.Size(); size != 1 {
+	if size := list.Length(); size != 1 {
 		t.Errorf("should have 1, got %d", size)
 	}
 

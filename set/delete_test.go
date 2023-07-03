@@ -12,7 +12,7 @@ func TestDelete(t *testing.T) {
 	set.Add("item3")
 	set.Delete("item2")
 
-	if size := set.Size(); size != 2 {
+	if size := set.Length(); size != 2 {
 		t.Errorf("should delete, expected 2 and got %d", size)
 	}
 }

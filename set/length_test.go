@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestSzie(t *testing.T) {
+func TestLength(t *testing.T) {
 	set := New()
 
 	set.Add("item1")

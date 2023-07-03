@@ -1,5 +1,5 @@
 package set
 
-func (s T) Size() int {
+func (s T) Length() int {
 	return len(s.items)
 }

@@ -11,7 +11,7 @@ func TestNew(t *testing.T) {
 		t.Errorf("should not be nil")
 	}
 
-	if size := set.Size(); size != 0 {
+	if size := set.Length(); size != 0 {
 		t.Errorf("should be empty, got %d", size)
 	}
 }

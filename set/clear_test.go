@@ -12,7 +12,7 @@ func TestClear(t *testing.T) {
 	set.Add("item3")
 	set.Clear()
 
-	if size := set.Size(); size != 0 {
+	if size := set.Length(); size != 0 {
 		t.Errorf("should be empty, got %d", size)
 	}
 }

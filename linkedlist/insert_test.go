@@ -1,15 +1,13 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestInsert(t *testing.T) {
 	list := createList()
-	list.Insert(4, "e")
+	list.Insert(4, 99)
 	item := list.Index(5)
 
-	if item.head != "e" {
-		t.Errorf("should be e, got %v", item.head)
+	if item.head != 99 {
+		t.Errorf("should be 99, got %v", item.head)
 	}
 }

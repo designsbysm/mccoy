@@ -1,8 +1,6 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestUncons(t *testing.T) {
 	list := createList()
@@ -12,12 +10,11 @@ func TestUncons(t *testing.T) {
 		t.Errorf("should be 8, got %d", size)
 	}
 
-	item = item.(int)
 	if item != 1 {
 		t.Errorf("should have 1, got %d", item)
 	}
 
-	item = list.head.(int)
+	item = list.head
 	if item != 2 {
 		t.Errorf("should have 2, got %d", item)
 	}

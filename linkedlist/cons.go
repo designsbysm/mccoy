@@ -1,15 +1,8 @@
 package linkedlist
 
-import "github.com/designsbysm/mccoy"
-
-func (l *T) Cons(i mccoy.Item) *T {
-	if l.head == nil {
-		l.head = i
-		return l
-	} else {
-		return &T{
-			head: i,
-			tail: l,
-		}
+func (l *Node[T]) Cons(i T) *Node[T] {
+	return &Node[T]{
+		head: i,
+		tail: l,
 	}
 }

@@ -1,8 +1,7 @@
 package linkedlist
 
-func (l *T) Last() *T {
-	// TODO: check empty list?, return error
-	last := Empty()
+func (l *Node[T]) Last() *Node[T] {
+	var last *Node[T]
 
 	for node := l; node != nil; node = node.tail {
 		if node.tail == nil {

@@ -1,11 +1,6 @@
 package linkedlist
 
-import (
-	"github.com/designsbysm/mccoy"
-)
-
-// IDEA: make the list heterogeneous with generics
-type T struct {
-	head mccoy.Item
-	tail *T
+type Node[T any] struct {
+	head T
+	tail *Node[T]
 }

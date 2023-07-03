@@ -1,8 +1,6 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestReverse(t *testing.T) {
 	list := createList()

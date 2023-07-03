@@ -1,8 +1,6 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestLast(t *testing.T) {
 	list := createList()

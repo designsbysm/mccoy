@@ -2,14 +2,12 @@ package linkedlist
 
 import (
 	"testing"
-
-	"github.com/designsbysm/mccoy"
 )
 
 func TestMap(t *testing.T) {
 	list := createList()
-	mapped := list.Map(func(i mccoy.Item) mccoy.Item {
-		return i.(int) + 1
+	mapped := list.Map(func(i int) int {
+		return i + 1
 	})
 
 	before := list.Index(4)
@@ -24,12 +22,12 @@ func TestMap(t *testing.T) {
 }
 
 func TestMapEmpty(t *testing.T) {
-	list := Empty()
-	mapped := list.Map(func(i mccoy.Item) mccoy.Item {
-		return i.(int) + 1
+	var list *Node[int]
+	mapped := list.Map(func(i int) int {
+		return i + 1
 	})
 
-	if mapped.head != nil {
-		t.Errorf("should be <nil>, got %v", list.head)
+	if length := mapped.Length(); length != 0 {
+		t.Errorf("should have 0, got %d", length)
 	}
 }

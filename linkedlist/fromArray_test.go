@@ -2,12 +2,10 @@ package linkedlist
 
 import (
 	"testing"
-
-	"github.com/designsbysm/mccoy"
 )
 
 func TestFromArray(t *testing.T) {
-	array := []mccoy.Item{31, 13, 12, 4, 18, 16, 7, 2, 3, 0, 10}
+	array := []int{31, 13, 12, 4, 18, 16, 7, 2, 3, 0, 10}
 	list := FromArray(array)
 
 	idx := 3

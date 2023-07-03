@@ -1,8 +1,6 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestCopy(t *testing.T) {
 	list1 := createList()

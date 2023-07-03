@@ -7,8 +7,8 @@ import (
 func TestNew(t *testing.T) {
 	list := New(1)
 
-	if size := list.Length(); size != 1 {
-		t.Errorf("should have 1, got %d", size)
+	if length := list.Length(); length != 1 {
+		t.Errorf("should have 1, got %d", length)
 	}
 
 	if list.head != 1 {

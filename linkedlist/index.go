@@ -1,6 +1,6 @@
 package linkedlist
 
-func (l *T) Index(index int) *T {
+func (l *Node[T]) Index(index int) *Node[T] {
 	// TODO: check bounds, return error
 	node := l
 

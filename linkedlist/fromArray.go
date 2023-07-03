@@ -1,17 +1,13 @@
 package linkedlist
 
-import (
-	"github.com/designsbysm/mccoy"
-)
-
-func FromArray(array []mccoy.Item) *T {
-	list := Empty()
+func FromArray[T any](array []T) *Node[T] {
+	var list *Node[T]
 
 	for _, i := range array {
-		if list.head != nil {
-			list = list.Prepend(i)
+		if list == nil {
+			list = New(i)
 		} else {
-			list.head = i
+			list = list.Cons(i)
 		}
 	}
 

@@ -1,8 +1,6 @@
 package linkedlist
 
-import "github.com/designsbysm/mccoy"
-
-func (l *T) Append(i mccoy.Item) {
+func (l *Node[T]) Append(i T) {
 	node := New(i)
 	last := l.Last()
 

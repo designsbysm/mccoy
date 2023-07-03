@@ -2,14 +2,12 @@ package linkedlist
 
 import (
 	"testing"
-
-	"github.com/designsbysm/mccoy"
 )
 
 func TestFilter(t *testing.T) {
 	list := createList()
-	filtered := list.Filter(func(i mccoy.Item) bool {
-		return i.(int) <= 5
+	filtered := list.Filter(func(i int) bool {
+		return i <= 5
 	})
 
 	if size := filtered.Length(); size != 5 {
@@ -18,12 +16,12 @@ func TestFilter(t *testing.T) {
 }
 
 func TestFilterEmpty(t *testing.T) {
-	list := Empty()
-	filtered := list.Filter(func(i mccoy.Item) bool {
-		return i.(int) <= 5
+	var list *Node[int]
+	filtered := list.Filter(func(i int) bool {
+		return i <= 5
 	})
 
-	if size := filtered.Length(); size != 1 {
-		t.Errorf("should have 1, got %d", size)
+	if length := filtered.Length(); length != 0 {
+		t.Errorf("should have 0, got %d", length)
 	}
 }

@@ -1,19 +1,13 @@
 package linkedlist
 
-import "github.com/designsbysm/mccoy"
-
-func (l *T) Map(fn func(mccoy.Item) mccoy.Item) *T {
-	list := Empty()
+func (l *Node[T]) Map(fn func(T) T) *Node[T] {
+	var list *Node[T]
 
 	for node := l; node != nil; node = node.tail {
-		if node.head == nil {
-			break
-		}
-
 		value := fn(node.head)
 
-		if list.head == nil {
-			list.head = value
+		if list == nil {
+			list = New(value)
 		} else {
 			list.Append(value)
 		}

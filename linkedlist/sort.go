@@ -1,14 +1,10 @@
 package linkedlist
 
-import (
-	"github.com/designsbysm/mccoy"
-)
-
-func (l *T) Sort() *T {
-	return split(l.Copy())
+func (l *Node[T]) Sort(compare func(T, T) bool) *Node[T] {
+	return split(l.Copy(), compare)
 }
 
-func split(left *T) *T {
+func split[T any](left *Node[T], compare func(T, T) bool) *Node[T] {
 	// don't need to split one or no items
 	if left.Length() < 2 {
 		return left
@@ -35,17 +31,19 @@ func split(left *T) *T {
 	mid.tail = nil
 
 	return merge(
-		split(left),
-		split(right),
+		split(left, compare),
+		split(right, compare),
+		compare,
 	)
 }
 
-func merge(left *T, right *T) *T {
-	list := Empty()
-	var item mccoy.Item
+func merge[T any](left *Node[T], right *Node[T], compare func(T, T) bool) *Node[T] {
+	var list *Node[T]
+
+	var item T
 
 	for left != nil && right != nil {
-		if left.head.(int) < right.head.(int) {
+		if compare(left.head, right.head) {
 			item, left = left.Uncons()
 			list = list.Cons(item)
 		} else {

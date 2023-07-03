@@ -1,34 +1,28 @@
 package linkedlist
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func createList() *T {
+func createList() *Node[int] {
 	list := New(1)
 
 	for i := 2; i < 10; i++ {
-		list = list.Prepend(i)
+		list = list.Cons(i)
 	}
 
-	list = list.Reverse()
-
-	return list
+	return list.Reverse()
 }
 
-func printList(list *T) {
+func printList[T any](l *Node[T]) {
 	fmt.Print(" ")
 
-	for {
-		if list == nil {
-			break
-		} else if list.head == nil {
-			fmt.Println("<empty>")
-			return
-		}
-
-		fmt.Print(list.head, " ")
-		list = list.tail
+	if l == nil {
+		fmt.Println("<empty>")
+		return
 	}
+
+	for node := l; node != nil; node = node.tail {
+		fmt.Print(node.head, " ")
+	}
+
 	fmt.Print("\n")
 }

@@ -1,6 +1,6 @@
 package linkedlist
 
-func (l *T) Length() int {
+func (l *Node[T]) Length() int {
 	counter := 0
 
 	for node := l; node != nil; node = node.tail {

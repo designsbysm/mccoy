@@ -1,9 +1,7 @@
 package linkedlist
 
-import "github.com/designsbysm/mccoy"
-
-func New(i mccoy.Item) *T {
-	return &T{
+func New[T any](i T) *Node[T] {
+	return &Node[T]{
 		i,
 		nil,
 	}

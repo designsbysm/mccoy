@@ -1,11 +1,11 @@
 package linkedlist
 
-import "github.com/designsbysm/mccoy"
-
-func (l *T) Insert(index int, i mccoy.Item) {
-	// TODO: change to At
+func (l *Node[T]) Insert(index int, i T) {
 	found := l.Index(index)
 
-	node := &T{i, found.tail}
+	node := &Node[T]{
+		i,
+		found.tail,
+	}
 	found.tail = node
 }

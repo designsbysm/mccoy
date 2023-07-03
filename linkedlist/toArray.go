@@ -1,11 +1,7 @@
 package linkedlist
 
-import (
-	"github.com/designsbysm/mccoy"
-)
-
-func (l *T) ToArray() []mccoy.Item {
-	array := []mccoy.Item{}
+func (l *Node[T]) ToArray() []T {
+	array := []T{}
 
 	for node := l; node != nil; node = node.tail {
 		array = append(array, node.head)

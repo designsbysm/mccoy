@@ -1,7 +1,6 @@
 package linkedlist
 
 import (
-	"strconv"
 	"testing"
 )
 
@@ -12,11 +11,7 @@ func TestSort(t *testing.T) {
 		return a < b
 	})
 
-	var got string
-	for node := sorted; node != nil; node = node.tail {
-		got += strconv.Itoa(node.head)
-	}
-
+	got := toString(sorted)
 	should := "02347101213161831"
 	if should != got {
 		t.Errorf("should have %s, got %s", should, got)

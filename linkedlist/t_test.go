@@ -1,6 +1,9 @@
 package linkedlist
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func createList() *Node[int] {
 	list := New(1)
@@ -12,7 +15,7 @@ func createList() *Node[int] {
 	return list.Reverse()
 }
 
-func printList[T any](l *Node[T]) {
+func printList(l *Node[int]) {
 	fmt.Print(" ")
 
 	if l == nil {
@@ -25,4 +28,14 @@ func printList[T any](l *Node[T]) {
 	}
 
 	fmt.Print("\n")
+}
+
+func toString(l *Node[int]) string {
+	var str string
+
+	for node := l; node != nil; node = node.tail {
+		str += strconv.Itoa(node.head)
+	}
+
+	return str
 }

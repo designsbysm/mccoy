@@ -1,15 +1,13 @@
 package set
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestLength(t *testing.T) {
-	set := New()
+	set := New[string]()
 
 	set.Add("item1")
-	set.Add(2)
-	set.Add(3.14)
+	set.Add("item2")
+	set.Add("item3")
 	items := set.Items()
 
 	if len(items) != 3 {

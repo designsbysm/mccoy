@@ -1,7 +1,7 @@
 package set
 
-func New() T {
-	set := T{}
+func New[T any]() Nodes[T] {
+	set := Nodes[T]{}
 	set.Clear()
 
 	return set

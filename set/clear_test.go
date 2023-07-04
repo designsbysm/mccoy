@@ -1,11 +1,9 @@
 package set
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestClear(t *testing.T) {
-	set := New()
+	set := New[string]()
 
 	set.Add("item1")
 	set.Add("item2")

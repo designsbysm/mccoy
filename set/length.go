@@ -1,5 +1,5 @@
 package set
 
-func (s T) Length() int {
+func (s Nodes[T]) Length() int {
 	return len(s.items)
 }

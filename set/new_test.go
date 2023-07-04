@@ -1,17 +1,15 @@
 package set
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestNew(t *testing.T) {
-	set := New()
+	set := New[string]()
 
 	if set.items == nil {
 		t.Errorf("should not be nil")
 	}
 
-	if size := set.Length(); size != 0 {
-		t.Errorf("should be empty, got %d", size)
+	if length := set.Length(); length != 0 {
+		t.Errorf("should be empty, got %d", length)
 	}
 }

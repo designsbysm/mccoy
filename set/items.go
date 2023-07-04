@@ -1,12 +1,10 @@
 package set
 
-import "github.com/designsbysm/mccoy"
-
-func (s T) Items() []mccoy.Item {
-	items := []mccoy.Item{}
+func (s *Nodes[T]) Items() []T {
+	var items []T
 
 	for i := range s.items {
-		items = append(items, i)
+		items = append(items, i.(T))
 	}
 
 	return items

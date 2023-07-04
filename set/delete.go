@@ -1,7 +1,5 @@
 package set
 
-import "github.com/designsbysm/mccoy"
-
-func (s *T) Delete(i mccoy.Item) {
+func (s *Nodes[T]) Delete(i T) {
 	delete(s.items, i)
 }

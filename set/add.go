@@ -1,8 +1,6 @@
 package set
 
-import "github.com/designsbysm/mccoy"
-
-func (s *T) Add(i mccoy.Item) {
+func (s *Nodes[T]) Add(i T) {
 	if s.items == nil {
 		s.Clear()
 	}

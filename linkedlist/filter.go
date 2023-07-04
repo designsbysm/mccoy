@@ -1,7 +1,7 @@
 package linkedlist
 
 func (l *Node[T]) Filter(fn func(T) bool) *Node[T] {
-	var list *Node[T]
+	list := Empty[T]()
 
 	for node := l; node != nil; node = node.tail {
 		if !fn(node.head) {

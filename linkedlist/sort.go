@@ -38,8 +38,7 @@ func split[T any](left *Node[T], compare func(T, T) bool) *Node[T] {
 }
 
 func merge[T any](left *Node[T], right *Node[T], compare func(T, T) bool) *Node[T] {
-	var list *Node[T]
-
+	list := Empty[T]()
 	var item T
 
 	for left != nil && right != nil {

@@ -1,8 +1,6 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestFromArray(t *testing.T) {
 	array := []int{31, 13, 12, 4, 18, 16, 7, 2, 3, 0, 10}

@@ -1,8 +1,6 @@
 package linkedlist
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestFilter(t *testing.T) {
 	list := createList()
@@ -10,8 +8,8 @@ func TestFilter(t *testing.T) {
 		return i <= 5
 	})
 
-	if size := filtered.Length(); size != 5 {
-		t.Errorf("should have 5, got %d", size)
+	if length := filtered.Length(); length != 5 {
+		t.Errorf("should have 5, got %d", length)
 	}
 }
 

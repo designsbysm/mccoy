@@ -1,7 +1,7 @@
 package linkedlist
 
 func (l *Node[T]) Map(fn func(T) T) *Node[T] {
-	var list *Node[T]
+	list := Empty[T]()
 
 	for node := l; node != nil; node = node.tail {
 		value := fn(node.head)

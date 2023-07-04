@@ -2,7 +2,7 @@ package linkedlist
 
 // Aliases for FIFO (first in first out) queue
 
-func (l *Node[T]) Queue(i T) {
+func (l *Node[T]) Enqueue(i T) {
 	l.Append(i)
 }
 

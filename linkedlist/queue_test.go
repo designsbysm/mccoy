@@ -4,9 +4,9 @@ import "testing"
 
 func TestQueue(t *testing.T) {
 	list := New(1)
-	list.Queue(2)
-	list.Queue(3)
-	list.Queue(4)
+	list.Enqueue(2)
+	list.Enqueue(3)
+	list.Enqueue(4)
 	item, list := list.Dequeue()
 
 	if length := list.Length(); length != 3 {

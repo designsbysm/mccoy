@@ -1,7 +1,10 @@
 package linkedlist
 
 func (l *Node[T]) Sort(compare func(T, T) bool) *Node[T] {
-	return split(l.Copy(), compare)
+	return split(
+		l.Copy(),
+		compare,
+	)
 }
 
 func split[T any](left *Node[T], compare func(T, T) bool) *Node[T] {

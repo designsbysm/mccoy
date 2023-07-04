@@ -3,7 +3,7 @@
 default: test lint
 
 benchmark:
-	go test -bench=. -benchmem
+	go test ./... -bench=. -benchmem
 
 coverage:
 	go test ./... -coverprofile=coverage.out

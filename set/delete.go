@@ -1,5 +1,5 @@
 package set
 
-func (s *Nodes[T]) Delete(i T) {
-	delete(s.items, i)
+func (s *Nodes[T]) Delete(item T) {
+	delete(s.items, item)
 }

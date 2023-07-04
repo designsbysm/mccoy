@@ -1,11 +1,12 @@
 package linkedlist
 
-func (l *Node[T]) Insert(index int, i T) {
+func (l *Node[T]) Insert(index int, head T) {
 	found := l.Index(index)
 
 	node := &Node[T]{
-		i,
-		found.tail,
+		head: head,
+		tail: found.tail,
 	}
+
 	found.tail = node
 }

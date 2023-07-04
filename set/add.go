@@ -1,11 +1,11 @@
 package set
 
-func (s *Nodes[T]) Add(i T) {
+func (s *Nodes[T]) Add(item T) {
 	if s.items == nil {
 		s.Clear()
 	}
 
-	if _, ok := s.items[i]; !ok {
-		s.items[i] = true
+	if _, ok := s.items[item]; !ok {
+		s.items[item] = true
 	}
 }

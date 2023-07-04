@@ -1,8 +1,8 @@
 package linkedlist
 
-func New[T any](i T) *Node[T] {
+func New[T any](head T) *Node[T] {
 	return &Node[T]{
-		i,
-		nil,
+		head: head,
+		tail: nil,
 	}
 }

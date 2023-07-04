@@ -1,8 +1,8 @@
 package linkedlist
 
-func (l *Node[T]) Cons(i T) *Node[T] {
+func (l *Node[T]) Cons(head T) *Node[T] {
 	return &Node[T]{
-		head: i,
+		head: head,
 		tail: l,
 	}
 }

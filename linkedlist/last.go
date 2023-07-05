@@ -3,11 +3,11 @@ package linkedlist
 func (l *Node[T]) Last() *Node[T] {
 	var last *Node[T]
 
-	for node := l; node != nil; node = node.tail {
+	l.ForEach(func(node *Node[T]) {
 		if node.tail == nil {
 			last = node
 		}
-	}
+	})
 
 	return last
 }

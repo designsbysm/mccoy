@@ -1,11 +1,11 @@
 package linkedlist
 
 func (l *Node[T]) Length() int {
-	counter := 0
+	length := 0
 
-	for node := l; node != nil; node = node.tail {
-		counter += 1
-	}
+	l.ForEach(func(node *Node[T]) {
+		length += 1
+	})
 
-	return counter
+	return length
 }

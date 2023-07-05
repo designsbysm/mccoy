@@ -33,9 +33,9 @@ func printList(l *Node[int]) {
 func toString(l *Node[int]) string {
 	var str string
 
-	for node := l; node != nil; node = node.tail {
+	l.ForEach(func(node *Node[int]) {
 		str += strconv.Itoa(node.head)
-	}
+	})
 
 	return str
 }

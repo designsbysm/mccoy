@@ -1,11 +1,11 @@
 package linkedlist
 
 func (l *Node[T]) Reverse() *Node[T] {
-	list := New(l.head)
+	list := Empty[T]()
 
-	for node := l.tail; node != nil; node = node.tail {
+	l.ForEach(func(node *Node[T]) {
 		list = list.Cons(node.head)
-	}
+	})
 
 	return list
 }

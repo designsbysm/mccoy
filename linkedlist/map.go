@@ -3,7 +3,7 @@ package linkedlist
 func (l *Node[T]) Map(fn func(T) T) *Node[T] {
 	list := Empty[T]()
 
-	for node := l; node != nil; node = node.tail {
+	l.ForEach(func(node *Node[T]) {
 		value := fn(node.head)
 
 		if list == nil {
@@ -11,7 +11,7 @@ func (l *Node[T]) Map(fn func(T) T) *Node[T] {
 		} else {
 			list.Append(value)
 		}
-	}
+	})
 
 	return list
 }

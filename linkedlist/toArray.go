@@ -3,9 +3,9 @@ package linkedlist
 func (l *Node[T]) ToArray() []T {
 	array := []T{}
 
-	for node := l; node != nil; node = node.tail {
+	l.ForEach(func(node *Node[T]) {
 		array = append(array, node.head)
-	}
+	})
 
 	return array
 }

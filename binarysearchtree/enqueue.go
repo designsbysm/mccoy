@@ -1,6 +1,6 @@
 package binarysearchtree
 
-func (t *Tree[T]) Insert(key int, value T) {
+func (t *Tree[T]) Enqueue(key int, value T) {
 	t.lock.Lock()
 	defer t.lock.Unlock()
 

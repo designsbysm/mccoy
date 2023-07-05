@@ -21,24 +21,24 @@ func TestRemove(t *testing.T) {
 
 	tree = New[int]()
 	for i := 0; i < 10; i++ {
-		tree.Insert(i, i)
+		tree.Enqueue(i, i)
 	}
 	tree.Remove(8)
 	tree.Remove(7)
 
 	tree = New[int]()
 	for i := 9; i > 0; i-- {
-		tree.Insert(i, i)
+		tree.Enqueue(i, i)
 	}
 	tree.Remove(8)
 	tree.Remove(7)
 
 	tree = New[int]()
 	for i := 0; i < 100; i++ {
-		tree.Insert(i, i)
+		tree.Enqueue(i, i)
 	}
 	for i := 99; i > 0; i-- {
-		tree.Insert(i, i)
+		tree.Enqueue(i, i)
 	}
 	tree.Remove(8)
 	tree.Remove(7)

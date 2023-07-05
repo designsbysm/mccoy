@@ -7,7 +7,6 @@ func (q *Queue[T]) Enqueue(priorty int, head T) {
 			head:    head,
 			tail:    nil,
 		}
-		q.length++
 
 		return
 	} else if priorty < q.nodes.priorty {
@@ -16,7 +15,6 @@ func (q *Queue[T]) Enqueue(priorty int, head T) {
 			head:    head,
 			tail:    q.nodes,
 		}
-		q.length++
 
 		return
 	}
@@ -40,6 +38,4 @@ func (q *Queue[T]) Enqueue(priorty int, head T) {
 			break
 		}
 	}
-
-	q.length++
 }

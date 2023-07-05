@@ -1,8 +1,8 @@
 package binarysearchtree
 
 func (t *Tree[T]) Remove(key int) {
-	t.lock.RLock()
-	defer t.lock.RUnlock()
+	t.lock.Lock()
+	defer t.lock.Unlock()
 
 	removeNode(t.root, key)
 }
@@ -28,7 +28,7 @@ func removeNode[T any](node *Node[T], key int) *Node[T] {
 	}
 
 	leftmostrightNode := node.right
-	for { //find smallest value on the right side
+	for {
 		if leftmostrightNode != nil && leftmostrightNode.left != nil {
 			leftmostrightNode = leftmostrightNode.left
 		} else {

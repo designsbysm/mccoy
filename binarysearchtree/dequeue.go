@@ -5,9 +5,6 @@ func (t *Tree[T]) Dequeue() *Node[T] {
 		return nil
 	}
 
-	t.lock.RLock()
-	defer t.lock.RUnlock()
-
 	min := t.Min()
 	t.Remove(min.key)
 

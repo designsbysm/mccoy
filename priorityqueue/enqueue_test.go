@@ -15,13 +15,13 @@ func TestEnqueueMultiple(t *testing.T) {
 	queue := createQueue()
 
 	inOrder := true
-	for node := queue.nodes; node != nil; node = node.tail {
+	queue.ForEach(func(node *Node[string]) {
 		if node.tail == nil {
-			break
+			return
 		}
 
 		inOrder = node.priorty <= node.tail.priorty
-	}
+	})
 
 	if !inOrder {
 		t.Errorf("should be in order, got %v", toArray(queue))

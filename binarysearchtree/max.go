@@ -1,6 +1,6 @@
 package binarysearchtree
 
-func (t *Tree[T]) Max() *T {
+func (t *Tree[T]) Max() *Node[T] {
 	t.lock.RLock()
 	defer t.lock.RUnlock()
 
@@ -11,7 +11,7 @@ func (t *Tree[T]) Max() *T {
 
 	for {
 		if node.right == nil {
-			return &node.value
+			return node
 		}
 
 		node = node.right

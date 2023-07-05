@@ -1,6 +1,6 @@
 package binarysearchtree
 
-func (t *Tree[T]) Min() *T {
+func (t *Tree[T]) Min() *Node[T] {
 	t.lock.RLock()
 	defer t.lock.RUnlock()
 
@@ -11,7 +11,7 @@ func (t *Tree[T]) Min() *T {
 
 	for {
 		if node.left == nil {
-			return &node.value
+			return node
 		}
 
 		node = node.left

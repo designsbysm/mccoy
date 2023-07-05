@@ -7,11 +7,10 @@ import (
 func createQueue() *Queue[string] {
 	queue := New[string]()
 	queue.Enqueue(5, "item1")
-	queue.Enqueue(5, "item2")
-	queue.Enqueue(1, "item3")
-	queue.Enqueue(9, "item4")
-	queue.Enqueue(-3, "item5")
-	queue.Enqueue(7, "item6")
+	queue.Enqueue(1, "item2")
+	queue.Enqueue(9, "item3")
+	queue.Enqueue(-3, "item4")
+	queue.Enqueue(7, "item5")
 
 	return queue
 }

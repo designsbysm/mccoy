@@ -9,7 +9,7 @@ func (l *Node[T]) Sort(compare func(T, T) bool) *Node[T] {
 
 func split[T any](left *Node[T], compare func(T, T) bool) *Node[T] {
 	// don't need to split one or no items
-	if left.Length() < 2 {
+	if left.tail == nil {
 		return left
 	}
 

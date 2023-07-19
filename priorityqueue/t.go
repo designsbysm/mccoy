@@ -1,7 +1,8 @@
 package priorityqueue
 
 type Queue[T any] struct {
-	nodes *Node[T]
+	length int
+	nodes  *Node[T]
 }
 
 type Node[T any] struct {

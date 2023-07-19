@@ -1,6 +1,9 @@
 package priorityqueue
 
 func (q *Queue[T]) Enqueue(priorty int, head T) {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+
 	q.length++
 
 	if q.nodes == nil || priorty < q.nodes.priorty {

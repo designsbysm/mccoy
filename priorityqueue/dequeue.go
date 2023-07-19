@@ -1,6 +1,9 @@
 package priorityqueue
 
 func (q *Queue[T]) Dequeue() *Node[T] {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+
 	q.length--
 
 	node := q.nodes

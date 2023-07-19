@@ -1,7 +1,10 @@
 package priorityqueue
 
+import "sync"
+
 type Queue[T any] struct {
 	length int
+	lock   sync.RWMutex
 	nodes  *Node[T]
 }
 

@@ -1,5 +1,5 @@
 package priorityqueue
 
-func (q *Queue[T]) Peek() *Node[T] {
-	return q.nodes
+func (q *Queue[T]) Peek() T {
+	return q.nodes.head
 }

@@ -6,8 +6,8 @@ func TestPeek(t *testing.T) {
 	queue := createQueue()
 	item := queue.Peek()
 
-	if item.head != "item4" {
-		t.Errorf("should be item4, got %v", item.head)
+	if item != "item4" {
+		t.Errorf("should be item4, got %v", item)
 	}
 
 	if length := queue.Length(); length != 5 {

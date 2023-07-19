@@ -54,7 +54,7 @@ func merge[T any](left *Node[T], right *Node[T], compare func(T, T) bool) *Node[
 		}
 	}
 
-	// merge leftover items
+	// prepend leftover items
 	for left != nil {
 		item, left = left.Uncons()
 		list = list.Cons(item)
